@@ -1,0 +1,13 @@
+<header class="p-4 bg-white sticky top-0 z-10">
+  <div class="text-xl font-semibold flex items-center">
+    <mat-icon class="mr-4 cursor-pointer" routerLink="dashboard"
+      >arrow_back</mat-icon
+    >
+    Post
+  </div>
+</header>
+<app-post-card [post]="parentPost"></app-post-card>
+<app-composer [isReply]="true" [post]="parentPost"  (postCreated)="refresh($event)"></app-composer>
+@for (post of childrenPosts; track post.id) {
+  <app-post-card [post]="post"></app-post-card>
+}

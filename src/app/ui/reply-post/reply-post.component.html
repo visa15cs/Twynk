@@ -1,0 +1,4 @@
+<mat-dialog-content>
+      <app-post-card [post]="post"></app-post-card>
+      <app-composer [post]="post" (postCreated)="refresh($event)"></app-composer>
+</mat-dialog-content>

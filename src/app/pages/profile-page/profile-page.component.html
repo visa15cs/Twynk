@@ -1,0 +1,18 @@
+<header class="p-4 header-shadow glass-card sticky top-0 z-10">
+  <div class="text-xl font-semibold">Profile</div>
+</header>
+<div class="p-4">
+  <div class="glass-card p-4">
+    <div class="flex items-center gap-4">
+      <div class="w-16 h-16 rounded-full bg-accent"></div>
+      <div>
+        <div class="text-lg font-semibold">@{{handle}}</div>
+        <div class="text-gray-800">{{user?.name}}</div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div *ngIf="posts?.length === 0">No posts found</div>
+    <app-post-card *ngFor="let p of posts" [post]="p"></app-post-card>
+  </div>
+</div>

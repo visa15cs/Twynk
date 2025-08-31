@@ -1,0 +1,28 @@
+<div [ngClass]="{'glass-card p-4 hover:shadow-lg transition' : !post?.isReply}">
+  <div class="flex gap-4">
+    <div class="flex items-center flex-col">
+      <a [routerLink]="['/u',post.author.username]">
+        <div class="w-12 h-12 rounded-full bg-accent flex items-center justify-center">{{ post?.author.name | slice:0:1
+          }}
+        </div>
+      </a>
+      <div *ngIf="post?.isReply" class="h-divider w-0.5 bg-gray-400 flex-grow mt-1"></div>
+    </div>
+    <div class="flex-1 pt-2 min-w-0" [ngClass]="{'pb-4':post.isReply}">
+      <div class="flex items-center gap-2 text-sm">
+        <span
+          class="font-semibold">{{post.author.name}}</span>
+        <span class="text-gray-800 cursor-pointer" [routerLink]="['/u',post.author.username]">@{{post.author.username}}</span>
+        <span class="text-gray-800">· {{post.createdAt | date:'short'}}</span>
+      </div>
+      <span tabindex="0" role="link" [routerLink]="['post',post.id]"
+        class="block py-2 text-base leading-6 break-words cursor-pointer">{{post.text}}</span>
+      <div class="flex gap-6 text-sm text-gray-800 pt-2">
+        <button (click)="doReply()" class="btn btn-ghost">💬 {{post.replyCount}}</button>
+        <button (click)="doRepost()" class="btn btn-ghost">🔁 {{post.repostCount}}</button>
+        <button (click)="doLike()" class="btn btn-ghost">{{post.liked?'❤️':'🤍'}} {{post.likeCount}}</button>
+        <button class="btn btn-ghost">↗ Share</button>
+      </div>
+    </div>
+  </div>
+</div>

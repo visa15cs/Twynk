@@ -1,0 +1,28 @@
+[
+  {
+    "id": "1",
+    "author": {
+      "id": "u1",
+      "handle": "vivek",
+      "name": "Vivek Sahu"
+    },
+    "text": "Welcome to my premium Threads-like demo built with Angular 19!",
+    "createdAt": "2025-08-15T00:00:00.000Z",
+    "likeCount": 12,
+    "replyCount": 2,
+    "repostCount": 1
+  },
+  {
+    "id": "2",
+    "author": {
+      "id": "u2",
+      "handle": "angulardev",
+      "name": "Angular Dev"
+    },
+    "text": "Angular 19 + Material + Tailwind = \ud83d\udd25",
+    "createdAt": "2025-08-14T12:30:00.000Z",
+    "likeCount": 34,
+    "replyCount": 5,
+    "repostCount": 4
+  }
+]

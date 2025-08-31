@@ -1,0 +1,6 @@
+<div *ngIf="posts?.length; else empty">
+  <app-post-card *ngFor="let p of posts" [post]="p"></app-post-card>
+</div>
+<ng-template #empty>
+  <div class="text-center text-gray-800 py-10">No posts yet</div>
+</ng-template>
